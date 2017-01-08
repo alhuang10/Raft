@@ -1,0 +1,24 @@
+runtime: failed to create new OS thread (have 2 already; errno=11)
+fatal error: newosproc
+
+runtime stack:
+runtime.throw(0x644a70, 0x9)
+	/usr/local/go/src/runtime/panic.go:527 +0x90
+runtime.newosproc(0xc82003a000, 0xc820049fc0)
+	/usr/local/go/src/runtime/os1_linux.go:150 +0x1ab
+runtime.newm(0x69fae0, 0x0)
+	/usr/local/go/src/runtime/proc1.go:1105 +0x130
+runtime.main.func1()
+	/usr/local/go/src/runtime/proc.go:48 +0x2c
+runtime.systemstack(0x75d100)
+	/usr/local/go/src/runtime/asm_amd64.s:262 +0x79
+runtime.mstart()
+	/usr/local/go/src/runtime/proc1.go:674
+
+goroutine 1 [running]:
+runtime.systemstack_switch()
+	/usr/local/go/src/runtime/asm_amd64.s:216 fp=0xc820034770 sp=0xc820034768
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:49 +0x62 fp=0xc8200347c0 sp=0xc820034770
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1696 +0x1 fp=0xc8200347c8 sp=0xc8200347c0

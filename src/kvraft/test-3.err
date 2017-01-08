@@ -1,0 +1,208 @@
+runtime: failed to create new OS thread (have 7 already; errno=11)
+fatal error: newosproc
+
+runtime stack:
+runtime.throw(0x644a70, 0x9)
+	/usr/local/go/src/runtime/panic.go:527 +0x90
+runtime.newosproc(0xc8200ec000, 0xc8200d9fc0)
+	/usr/local/go/src/runtime/os1_linux.go:150 +0x1ab
+runtime.newm(0x69fa00, 0xc82002c000)
+	/usr/local/go/src/runtime/proc1.go:1105 +0x130
+runtime.startm(0xc82002c000, 0x100000001)
+	/usr/local/go/src/runtime/proc1.go:1178 +0xef
+runtime.wakep()
+	/usr/local/go/src/runtime/proc1.go:1250 +0x59
+runtime.resetspinning()
+	/usr/local/go/src/runtime/proc1.go:1551 +0xb0
+runtime.schedule()
+	/usr/local/go/src/runtime/proc1.go:1640 +0x27e
+runtime.park_m(0xc820000f00)
+	/usr/local/go/src/runtime/proc1.go:1698 +0x18b
+runtime.mcall(0x0)
+	/usr/local/go/src/runtime/asm_amd64.s:204 +0x5b
+
+goroutine 1 [chan receive]:
+testing.RunTests(0x69f6d0, 0x75a8c0, 0x12, 0x12, 0x42d901)
+	/usr/local/go/src/testing/testing.go:562 +0x8ad
+testing.(*M).Run(0xc82004bef8, 0x492951)
+	/usr/local/go/src/testing/testing.go:494 +0x70
+main.main()
+	kvraft/_test/_testmain.go:88 +0x116
+
+goroutine 5 [sleep]:
+time.Sleep(0x12a05f200)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+kvraft.GenericTest(0xc820020510, 0x63c0a8, 0x5, 0x1, 0x0, 0xffffffffffffffff)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:179 +0x3c1
+kvraft.TestBasic(0xc820020510)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:239 +0x81
+testing.tRunner(0xc820020510, 0x75a8c0)
+	/usr/local/go/src/testing/testing.go:456 +0x98
+created by testing.RunTests
+	/usr/local/go/src/testing/testing.go:561 +0x86d
+
+goroutine 6 [chan receive]:
+labrpc.MakeNetwork.func1(0xc82001f800)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:131 +0x6d
+created by labrpc.MakeNetwork
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:134 +0x1ec
+
+goroutine 8 [sleep]:
+time.Sleep(0x4c4b40)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.(*Raft).Follower(0xc8200b8000)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:771 +0x172
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1249 +0x2ab
+
+goroutine 9 [sleep]:
+time.Sleep(0x1312d00)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.Make.func1(0xc8200b8000)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1268 +0xf3
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1298 +0x2cd
+
+goroutine 10 [select]:
+kvraft.StartKVServer.func2(0xc820026360, 0xc82001fb00)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:291 +0x18ee
+created by kvraft.StartKVServer
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:440 +0x35a
+
+goroutine 11 [sleep]:
+time.Sleep(0x4c4b40)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.(*Raft).Follower(0xc8200b80e0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:771 +0x172
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1249 +0x2ab
+
+goroutine 12 [sleep]:
+time.Sleep(0x1312d00)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.Make.func1(0xc8200b80e0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1268 +0xf3
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1298 +0x2cd
+
+goroutine 13 [select]:
+kvraft.StartKVServer.func2(0xc8200265a0, 0xc82001ff00)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:291 +0x18ee
+created by kvraft.StartKVServer
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:440 +0x35a
+
+goroutine 14 [sleep]:
+time.Sleep(0x4c4b40)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.(*Raft).Follower(0xc8200b81c0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:771 +0x172
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1249 +0x2ab
+
+goroutine 15 [sleep]:
+time.Sleep(0x1312d00)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.Make.func1(0xc8200b81c0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1268 +0xf3
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1298 +0x2cd
+
+goroutine 16 [select]:
+kvraft.StartKVServer.func2(0xc8200267e0, 0xc8200c02c0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:291 +0x18ee
+created by kvraft.StartKVServer
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:440 +0x35a
+
+goroutine 17 [sleep]:
+time.Sleep(0x4c4b40)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.(*Raft).Follower(0xc8200b82a0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:771 +0x172
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1249 +0x2ab
+
+goroutine 18 [sleep]:
+time.Sleep(0x1312d00)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.Make.func1(0xc8200b82a0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1268 +0xf3
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1298 +0x2cd
+
+goroutine 19 [select]:
+kvraft.StartKVServer.func2(0xc820026a20, 0xc8200c0680)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:291 +0x18ee
+created by kvraft.StartKVServer
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:440 +0x35a
+
+goroutine 20 [runnable]:
+raft.(*Raft).Follower(0xc8200b8380)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:739
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1249 +0x2ab
+
+goroutine 21 [sleep]:
+time.Sleep(0x1312d00)
+	/usr/local/go/src/runtime/time.go:59 +0xf9
+raft.Make.func1(0xc8200b8380)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1268 +0xf3
+created by raft.Make
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/raft/raft.go:1298 +0x2cd
+
+goroutine 22 [select]:
+kvraft.StartKVServer.func2(0xc820026c60, 0xc8200c0a40)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:291 +0x18ee
+created by kvraft.StartKVServer
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/server.go:440 +0x35a
+
+goroutine 23 [chan receive]:
+kvraft.spawn_clients_and_wait(0xc820020510, 0xc8200205a0, 0x1, 0xc8200d2210)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:42 +0x18a
+created by kvraft.GenericTest
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:172 +0x34b
+
+goroutine 24 [chan receive]:
+labrpc.(*ClientEnd).Call(0xc82000b1a0, 0x6620f0, 0x10, 0x58e8a0, 0xc8200c11c0, 0x58e900, 0xc8200f8000, 0x1)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:95 +0x2b9
+kvraft.(*Clerk).PutAppend(0xc8200d23c0, 0xc82000f850, 0x1, 0x0, 0x0, 0x63b758, 0x3)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/client.go:127 +0x330
+kvraft.(*Clerk).Put(0xc8200d23c0, 0xc82000f850, 0x1, 0x0, 0x0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/client.go:141 +0x5e
+kvraft.GenericTest.func1(0x0, 0xc8200d23c0, 0xc820020510)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:156 +0x10f
+kvraft.run_client(0xc820020510, 0xc8200205a0, 0x0, 0xc820026f60, 0xc8200d2210)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:28 +0xc6
+created by kvraft.spawn_clients_and_wait
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:38 +0x116
+
+goroutine 27 [select]:
+labrpc.(*Network).ProcessReq(0xc82001f800, 0x5a3d40, 0xc82000f760, 0x6620f0, 0x10, 0x7f205be2a0a8, 0x58e8a0, 0xc8200c4750, 0x72, 0xcc, ...)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:219 +0x704
+created by labrpc.MakeNetwork.func1
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:132 +0xbf
+
+goroutine 28 [runnable]:
+encoding/gob.(*Decoder).compatibleType(0xc820022900, 0x7f205be2a0a8, 0x610e40, 0xc800000014, 0xc8200e1220, 0x0)
+	/usr/local/go/src/encoding/gob/decode.go:966 +0x13f
+encoding/gob.(*Decoder).compileDec(0xc820022900, 0xc800000010, 0xc82001f740, 0xc8200f8060, 0x0, 0x0)
+	/usr/local/go/src/encoding/gob/decode.go:1114 +0x7a3
+encoding/gob.(*Decoder).getDecEnginePtr(0xc820022900, 0x10, 0xc82001f740, 0xc8200383b0, 0x0, 0x0)
+	/usr/local/go/src/encoding/gob/decode.go:1136 +0x1df
+encoding/gob.(*Decoder).decodeValue(0xc820022900, 0xc800000010, 0x5e89e0, 0xc8200fa1c0, 0x16)
+	/usr/local/go/src/encoding/gob/decode.go:1181 +0x158
+encoding/gob.(*Decoder).recvType(0xc820022900, 0xffffffff00000041)
+	/usr/local/go/src/encoding/gob/decoder.go:62 +0xf1
+encoding/gob.(*Decoder).decodeTypeSequence(0xc820022900, 0x69fb00, 0xc820022900)
+	/usr/local/go/src/encoding/gob/decoder.go:151 +0x97
+encoding/gob.(*Decoder).DecodeValue(0xc820022900, 0xc820018a00, 0xc8200383a8, 0x16, 0x0, 0x0)
+	/usr/local/go/src/encoding/gob/decoder.go:208 +0x15d
+encoding/gob.(*Decoder).Decode(0xc820022900, 0xc820018a00, 0xc8200383a8, 0x0, 0x0)
+	/usr/local/go/src/encoding/gob/decoder.go:185 +0x289
+labrpc.(*Service).dispatch(0xc8200c0380, 0x6620f7, 0x9, 0x5a3d40, 0xc82000f760, 0x6620f0, 0x10, 0x7f205be2a0a8, 0x58e8a0, 0xc8200c4750, ...)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:432 +0x4be
+labrpc.(*Server).dispatch(0xc82000aea0, 0x5a3d40, 0xc82000f760, 0x6620f0, 0x10, 0x7f205be2a0a8, 0x58e8a0, 0xc8200c4750, 0x72, 0xcc, ...)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:365 +0x1cb
+labrpc.(*Network).ProcessReq.func1(0xc82000aea0, 0x5a3d40, 0xc82000f760, 0x6620f0, 0x10, 0x7f205be2a0a8, 0x58e8a0, 0xc8200c4750, 0x72, 0xcc, ...)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:208 +0x42
+created by labrpc.(*Network).ProcessReq
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/labrpc/labrpc.go:210 +0x21f

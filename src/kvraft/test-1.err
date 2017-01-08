@@ -1,0 +1,5 @@
+2016/04/28 21:22:15 Warning: client 0 managed to perform only 8 put operations in 1 sec?
+2016/04/28 21:22:16 Warning: client 1 managed to perform only 8 put operations in 1 sec?
+2016/04/28 21:22:16 Warning: client 2 managed to perform only 8 put operations in 1 sec?
+2016/04/28 21:23:48 Warning: client 0 managed to perform only 7 put operations in 1 sec?
+2016/04/28 21:23:49 Warning: client 4 managed to perform only 9 put operations in 1 sec?

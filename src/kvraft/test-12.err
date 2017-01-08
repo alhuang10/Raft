@@ -1,0 +1,36 @@
+runtime: failed to create new OS thread (have 3 already; errno=11)
+fatal error: newosproc
+
+runtime stack:
+runtime.throw(0x644a70, 0x9)
+	/usr/local/go/src/runtime/panic.go:527 +0x90
+runtime.newosproc(0xc82003a480, 0xc820045fc0)
+	/usr/local/go/src/runtime/os1_linux.go:150 +0x1ab
+runtime.newm(0x69fa00, 0xc820029500)
+	/usr/local/go/src/runtime/proc1.go:1105 +0x130
+runtime.startm(0xc820029500, 0x100000001)
+	/usr/local/go/src/runtime/proc1.go:1178 +0xef
+runtime.wakep()
+	/usr/local/go/src/runtime/proc1.go:1250 +0x59
+runtime.newproc1(0x69f8e0, 0xc82004bee8, 0x0, 0x42b8cb, 0x0)
+	/usr/local/go/src/runtime/proc1.go:2296 +0x40a
+runtime.newproc.func1()
+	/usr/local/go/src/runtime/proc1.go:2212 +0x48
+runtime.systemstack(0x75d100)
+	/usr/local/go/src/runtime/asm_amd64.s:262 +0x79
+runtime.mstart()
+	/usr/local/go/src/runtime/proc1.go:674
+
+goroutine 1 [running, locked to thread]:
+runtime.systemstack_switch()
+	/usr/local/go/src/runtime/asm_amd64.s:216 fp=0xc82004be90 sp=0xc82004be88
+runtime.newproc(0x0, 0x69f8e0)
+	/usr/local/go/src/runtime/proc1.go:2213 +0x62 fp=0xc82004bed8 sp=0xc82004be90
+runtime.init.4()
+	/usr/local/go/src/runtime/proc.go:141 +0x2b fp=0xc82004bef0 sp=0xc82004bed8
+runtime.init()
+	/usr/local/go/src/runtime/zversion.go:9 +0x378 fp=0xc82004bf50 sp=0xc82004bef0
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:63 +0x103 fp=0xc82004bfa0 sp=0xc82004bf50
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1696 +0x1 fp=0xc82004bfa8 sp=0xc82004bfa0

@@ -1,0 +1,77 @@
+=== RUN   TestBasic
+Test: One client ...
+  ... Passed
+--- PASS: TestBasic (15.26s)
+=== RUN   TestConcurrent
+Test: concurrent clients ...
+  ... Passed
+--- PASS: TestConcurrent (15.84s)
+=== RUN   TestUnreliable
+Test: unreliable ...
+  ... Passed
+--- PASS: TestUnreliable (48.43s)
+=== RUN   TestUnreliableOneKey
+Test: Concurrent Append to same key, unreliable ...
+... Passed
+--- PASS: TestUnreliableOneKey (1.65s)
+=== RUN   TestOnePartition
+Test: Progress in majority ...
+  ... Passed
+Test: No progress in minority ...
+  ... Passed
+Test: Completion after heal ...
+... Passed
+--- PASS: TestOnePartition (2.86s)
+=== RUN   TestManyPartitionsOneClient
+Test: many partitions ...
+  ... Passed
+--- PASS: TestManyPartitionsOneClient (22.18s)
+=== RUN   TestManyPartitionsManyClients
+Test: many partitions, many clients ...
+  ... Passed
+--- PASS: TestManyPartitionsManyClients (23.21s)
+=== RUN   TestPersistOneClient
+Test: persistence with one client ...
+  ... Passed
+--- PASS: TestPersistOneClient (18.95s)
+=== RUN   TestPersistConcurrent
+Test: persistence with concurrent clients ...
+  ... Passed
+--- PASS: TestPersistConcurrent (20.46s)
+=== RUN   TestPersistConcurrentUnreliable
+Test: persistence with concurrent clients, unreliable ...
+  ... Passed
+--- PASS: TestPersistConcurrentUnreliable (21.02s)
+=== RUN   TestPersistPartition
+Test: persistence with concurrent clients and repartitioning servers...
+  ... Passed
+--- PASS: TestPersistPartition (27.69s)
+=== RUN   TestPersistPartitionUnreliable
+Test: persistence with concurrent clients and repartitioning servers, unreliable...
+  ... Passed
+--- PASS: TestPersistPartitionUnreliable (27.64s)
+=== RUN   TestSnapshotRPC
+Test: InstallSnapshot RPC ...
+  ... Passed
+--- PASS: TestSnapshotRPC (4.81s)
+=== RUN   TestSnapshotRecover
+Test: persistence with one client and snapshots ...
+  ... Passed
+--- PASS: TestSnapshotRecover (18.97s)
+=== RUN   TestSnapshotRecoverManyClients
+Test: persistence with several clients and snapshots ...
+  ... Passed
+--- PASS: TestSnapshotRecoverManyClients (22.19s)
+=== RUN   TestSnapshotUnreliable
+Test: persistence with several clients, snapshots, unreliable ...
+  ... Passed
+--- PASS: TestSnapshotUnreliable (16.37s)
+=== RUN   TestSnapshotUnreliableRecover
+Test: persistence with several clients, failures, and snapshots, unreliable ...
+  ... Passed
+--- PASS: TestSnapshotUnreliableRecover (20.77s)
+=== RUN   TestSnapshotUnreliableRecoverConcurrentPartition
+Test: persistence with several clients, failures, and snapshots, unreliable and partitions ...
+  ... Passed
+--- PASS: TestSnapshotUnreliableRecoverConcurrentPartition (33.00s)
+PASS

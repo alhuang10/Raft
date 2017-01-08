@@ -1,0 +1,44 @@
+runtime: failed to create new OS thread (have 5 already; errno=11)
+fatal error: newosproc
+
+runtime stack:
+runtime.throw(0x644a70, 0x9)
+	/usr/local/go/src/runtime/panic.go:527 +0x90
+runtime.newosproc(0xc82009a000, 0xc8200abfc0)
+	/usr/local/go/src/runtime/os1_linux.go:150 +0x1ab
+runtime.newm(0x69f9e8, 0x0)
+	/usr/local/go/src/runtime/proc1.go:1105 +0x130
+runtime.startTheWorldWithSema()
+	/usr/local/go/src/runtime/proc1.go:664 +0x1fc
+runtime.systemstack(0x75d100)
+	/usr/local/go/src/runtime/asm_amd64.s:262 +0x79
+runtime.mstart()
+	/usr/local/go/src/runtime/proc1.go:674
+
+goroutine 5 [running]:
+runtime.systemstack_switch()
+	/usr/local/go/src/runtime/asm_amd64.s:216 fp=0xc820035d00 sp=0xc820035cf8
+runtime.startTheWorld()
+	/usr/local/go/src/runtime/proc1.go:508 +0x23 fp=0xc820035d10 sp=0xc820035d00
+runtime.GOMAXPROCS(0x4, 0x15)
+	/usr/local/go/src/runtime/debug.go:30 +0x9a fp=0xc820035d30 sp=0xc820035d10
+kvraft.make_config(0xc8200203f0, 0x63c0a8, 0x5, 0x5, 0x0, 0xffffffffffffffff, 0x75c9c0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/config.go:323 +0x2c fp=0xc820035dc0 sp=0xc820035d30
+kvraft.GenericTest(0xc8200203f0, 0x63c0a8, 0x5, 0x1, 0x0, 0xffffffffffffffff)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:133 +0x7e fp=0xc820035f30 sp=0xc820035dc0
+kvraft.TestBasic(0xc8200203f0)
+	/afs/athena.mit.edu/user/a/l/alhuang/6.824_P2/src/kvraft/test_test.go:239 +0x81 fp=0xc820035f78 sp=0xc820035f30
+testing.tRunner(0xc8200203f0, 0x75a8c0)
+	/usr/local/go/src/testing/testing.go:456 +0x98 fp=0xc820035fb0 sp=0xc820035f78
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1696 +0x1 fp=0xc820035fb8 sp=0xc820035fb0
+created by testing.RunTests
+	/usr/local/go/src/testing/testing.go:561 +0x86d
+
+goroutine 1 [chan receive]:
+testing.RunTests(0x69f6d0, 0x75a8c0, 0x12, 0x12, 0x42d901)
+	/usr/local/go/src/testing/testing.go:562 +0x8ad
+testing.(*M).Run(0xc82004bef8, 0x492951)
+	/usr/local/go/src/testing/testing.go:494 +0x70
+main.main()
+	kvraft/_test/_testmain.go:88 +0x116
